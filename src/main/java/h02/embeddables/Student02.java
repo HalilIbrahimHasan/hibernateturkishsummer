@@ -12,6 +12,8 @@ public class Student02 {
 	@Column(name="student_name")
 	private String name;
 	private int grade;
+	private Course course;
+	
 	
 	public Student02() {
 		
@@ -28,6 +30,14 @@ public class Student02 {
 		this.std_id = std_id;
 		this.name = name;
 		this.grade = grade;
+	}
+
+	public Student02(int std_id, String name, int grade, Course course) {
+		
+		this.std_id = std_id;
+		this.name = name;
+		this.grade = grade;
+		this.course = course;
 	}
 
 	public int getStd_id() {
@@ -56,9 +66,10 @@ public class Student02 {
 
 	@Override
 	public String toString() {
-		return "Student02 std_id: " + std_id + ", name: " + name + ", grade: " + grade ;
+		return "Student02 [std_id=" + std_id + ", name=" + name + ", grade=" + grade + ", course=" + course + "]";
 	}
-	
+
+
 	
 	
 	
