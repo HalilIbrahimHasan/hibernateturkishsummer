@@ -16,6 +16,7 @@ public class Student05 {
 	private int std_id;
 	private String name;
 	private int grade;
+	
 	@ManyToMany(cascade = CascadeType.ALL)
 	private List <Book05> bookList = new ArrayList();
 	

@@ -12,7 +12,7 @@ public class Book05 {
 	@Id
 	private int book_id;
 	private String book_name;
-	@ManyToMany
+	@ManyToMany(mappedBy="bookList")
 	private List<Student05> studentList = new ArrayList();
 	
 	public Book05() {
