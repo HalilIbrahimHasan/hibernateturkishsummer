@@ -5,6 +5,8 @@ import java.util.*;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 
 
@@ -18,6 +20,7 @@ public class Student05 {
 	private int grade;
 	
 	@ManyToMany(cascade = CascadeType.ALL)
+	@JoinTable(name="Student05_Book05",joinColumns = {@JoinColumn(name="std_id")},inverseJoinColumns = {@JoinColumn(name="book_id")})
 	private List <Book05> bookList = new ArrayList();
 	
 	
@@ -67,7 +70,7 @@ public class Student05 {
 
 	@Override
 	public String toString() {
-		return "Student05 [std_id=" + std_id + ", name=" + name + ", grade=" + grade + ", bookList=" + bookList + "]";
+		return "Student05 [std_id=" + std_id + ", name=" + name + ", grade=" + grade;
 	}
 	
 	
