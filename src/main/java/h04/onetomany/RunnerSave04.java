@@ -47,6 +47,13 @@ public class RunnerSave04 {
 		Session session = sf.openSession();
 		
 		
+		
+		
+		
+		
+		
+		
+		
 		Transaction tx = session.beginTransaction();
 		
 		
