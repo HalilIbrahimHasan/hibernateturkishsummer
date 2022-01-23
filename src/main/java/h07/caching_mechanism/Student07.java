@@ -1,38 +1,42 @@
-package h06.lazy_fetch_eager_fetch;
+package h07.caching_mechanism;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Cacheable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
+
 
 @Entity
-public class Student06 {
-	
+
+public class Student07 {
+
 	
 	
 
-	
 	@Id
 	private int std_id;
 	@Column(name="student_name")
 	private String name;
 	private int grade;
 	
-	@OneToMany(mappedBy="student",fetch = FetchType.LAZY)
-	private List<Book06> bookList = new ArrayList();
+	@OneToMany(mappedBy="student")
+	private List<Book07> bookList = new ArrayList();
 	
 	
-	public Student06() {
+	public Student07() {
 	
 	}
 
 
-	public Student06(int std_id, String name, int grade) {
+	public Student07(int std_id, String name, int grade) {
 		
 		this.std_id = std_id;
 		this.name = name;
@@ -40,7 +44,7 @@ public class Student06 {
 	}
 
 
-	public Student06(int std_id, String name, int grade, List<Book06> bookList) {
+	public Student07(int std_id, String name, int grade, List<Book07> bookList) {
 		
 		this.std_id = std_id;
 		this.name = name;
@@ -79,12 +83,12 @@ public class Student06 {
 	}
 
 
-	public List<Book06> getBookList() {
+	public List<Book07> getBookList() {
 		return bookList;
 	}
 
 
-	public void setBookList(List<Book06> bookList) {
+	public void setBookList(List<Book07> bookList) {
 		this.bookList = bookList;
 	}
 
@@ -96,6 +100,4 @@ public class Student06 {
 
 
 	
-	
-
 }

@@ -14,7 +14,8 @@ public class RunnerSave01 {
 		Student std1 = new Student(101, "Hakan Inal", 13);
 		Student std2 = new Student(102, "Sabah Nur", 14);
 
-		
+		Student std3 = new Student(103, "Dayach", 15);
+		Student std4 = new Student(104, "Hakan", 16);
 		
 		
 		Configuration con = new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(Student.class);
@@ -26,7 +27,8 @@ public class RunnerSave01 {
 		
 		session.save(std1);
 		session.save(std2);
-		
+		session.save(std3);
+		session.save(std4);
 		
 
 		tx.commit();

@@ -7,7 +7,7 @@ import javax.persistence.Table;
 import javax.persistence.Transient;
 
 @Entity //@Entity annotation i ise Elinizdeki Objeyi Database table ina donusturur.
-@Table(name="Student_Table") //@Table annotation'i elinizdeki Objeye Database de yeni isim vermeniz saglar
+//@Table(name="Student_Table") //@Table annotation'i elinizdeki Objeye Database de yeni isim vermeniz saglar
 public class Student {
 
 	

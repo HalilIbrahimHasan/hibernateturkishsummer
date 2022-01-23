@@ -1,13 +1,19 @@
-package h06.lazy_fetch_eager_fetch;
+package h07.caching_mechanism;
 
+import javax.persistence.Cacheable;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
+
 
 @Entity
-public class Book06 {
+//@Cacheable
+//@Cache(region = "Book07", usage = CacheConcurrencyStrategy.READ_WRITE)
+public class Book07 {
 
 	
 	
@@ -17,13 +23,13 @@ public class Book06 {
 	
 	@ManyToOne
 	@JoinColumn(name="std_id")  
-	private Student06 student;
+	private Student07 student;
 
-	public Book06() {
+	public Book07() {
 		
 	}
 
-	public Book06(int book_id, String book_name) {
+	public Book07(int book_id, String book_name) {
 		
 		this.book_id = book_id;
 		this.book_name = book_name;
@@ -45,11 +51,11 @@ public class Book06 {
 		this.book_name = book_name;
 	}
 
-	public Student06 getStudent() {
+	public Student07 getStudent() {
 		return student;
 	}
 
-	public void setStudent(Student06 student) {
+	public void setStudent(Student07 student) {
 		this.student = student;
 	}
 
@@ -57,7 +63,6 @@ public class Book06 {
 	public String toString() {
 		return "Book06 [book_id=" + book_id + ", book_name=" + book_name + "]";
 	}
-	
 	
 	
 }
